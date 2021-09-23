@@ -226,6 +226,12 @@ def ProfileView(request):
 
 	app_user = AppUser.objects.get(user__pk=request.user.id)
 
+	bnb_balance = requests.get("http://raytechng.pythonanywhere.com/get-bnb-balance/%s/" % (app_user.public_key))
+	bep_balance = requests.get("http://raytechng.pythonanywhere.com/get-bep-balance/%s/" % (app_user.public_key))
+
+	bnb_balance = bnb_balance.json()
+	bep_balance = bep_balance.json()
+
 	if request.method == "POST":
 		full_name = request.POST.get("full_name")
 		house_address = request.POST.get("house_address")
@@ -276,6 +282,8 @@ def ProfileView(request):
 	else:
 
 		context = {
+			"bnb_balance": bnb_balance["balance"],
+			"bep_balance": bep_balance["balance"],
 			"app_user": app_user
 				
 	            }
