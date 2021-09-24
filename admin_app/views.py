@@ -19,9 +19,9 @@ from django.core.mail import send_mail
 
 
 def IndexView(request):
-	app_user = AppUser.objects.get(user__pk=request.user.id)
+	#app_user = AppUser.objects.get(user__pk=request.user.id)
 	context = {
-		"app_user": app_user
+		#"app_user": app_user
 			
             }
 	

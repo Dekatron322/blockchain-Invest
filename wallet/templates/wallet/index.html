@@ -15,7 +15,7 @@
 
 
   </style>
-  <div class="content-wrapper">
+  <div class="content-wrapper" style="background-color: #28384c;">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -54,10 +54,10 @@
 
                 <ul class="list-group list-group-unbordered mb-3">
                   <li style="background-color: #0e1326" class="list-group-item">
-                    <b>BNB Amount</b> <a class="float-right">{{ bnb_balance }}(BNB)</a>
+                    <b>BNB Amount</b> <a class="float-right">{{ bnb_balance }}BNB</a>
                   </li>
                   <li style="background-color: #0e1326" class="list-group-item">
-                    <b>OPY Amount</b> <a class="float-right">{{ bep_balance }}(OPY)</a>
+                    <b>OPY Amount</b> <a class="float-right">{{ bep_balance }}OPY</a>
                   </li>
                 </ul>
 
@@ -81,16 +81,16 @@
                 <div class="card-body" style="background-color: #0e1326">
 
 
-                <div class="row">
+                
                   <h3>{{ app_user.public_key }}</h3>
-                  <br /><br />
+                  
                   <small>Send and receive BNB tokens as well as OPY coins.<br />
                   Ensure you have enough coins before sending,<br> also make sure to input the correct binance smart chain wallet address on the input field before clicking "Send".</small>
-                </div>
-                <br /><br />
+                
+                
 
                   
-                <div class="row">
+                <div class="container row" >
 
                     <div class="col-lg-4 col-md-4">
                       <div class="form-group">
@@ -136,6 +136,8 @@
         <!-- /.row -->
       </div><!-- /.container-fluid -->
     </section>
+
+
     <script type="text/javascript">
   const copyBtns = [...document.getElementsByClassName('copy-btn')]
   let previous = null
