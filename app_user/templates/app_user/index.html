@@ -22,13 +22,18 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0" style="color: #0e1326">Dashboard</h1>
-          </div><!-- /.col -->
+            <h1 class="m-0" style="color: #ffff">Dashboard / {% if item.payment_status_k == False %}<span><small style="background-color: red; padding: 5px; font-size: 14px; border-radius: 5px"><i class="fas fa-ribbon"></i>
+                                      Not Verified</small></span>
+                                    {% else %}<span><small style="background-color: #1DB954; padding: 5px; font-size: 14px; border-radius: 5px"><i class="fas fa-certificate"></i>
+                                      Verified</small></span>
+                                    {% endif %}</h1>
+          </div><!-- /.col --><br>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">{{ app_user.public_key|truncatechars_html:10 }} : 
-            ({{ bnb_balance }}BNB) | ({{ bep_balance }}OPY)</li>
+              
+              <li class="breadcrumb-item active"><button style="margin-top: 8px" type="button" class="btn btn-block bg-gradient-secondary btn-xs">{{ app_user.public_key|truncatechars_html:10 }} : 
+             ({{ bnb_balance }}BNB) | ({{ bep_balance }}OPY)</button>
+           </li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -93,6 +98,8 @@
         </div>
     {% endfor %}
 {% endif %}
+
+
 
     <!-- Main content -->
     <section class="content">
@@ -175,8 +182,8 @@
                 <div class="row">
                   <div class="col-sm-4 col-4">
                     <div class="description-block border-right">
-                      <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span>
-                      <h1 class="description-header" id="btc-price" style="font-size: 26px;">------</h1>
+                      
+                      <h1 class="description-header" id="btc-price" style="font-size: 20px;">------</h1>
                       <span class="description-text">BTC/BUSD</span>
                     </div>
                     <!-- /.description-block -->
@@ -184,8 +191,8 @@
                   <!-- /.col -->
                   <div class="col-sm-4 col-4">
                     <div class="description-block border-right">
-                      <span class="description-percentage text-warning"><i class="fas fa-caret-left"></i> 0%</span>
-                      <h5 class="description-header" id="bnb-price" style="font-size: 26px;">---------</h5>
+                      
+                      <h5 class="description-header" id="bnb-price" style="font-size: 20px;">---------</h5>
                       <span class="description-text">BNB/BUSD</span>
                     </div>
                     <!-- /.description-block -->
@@ -195,8 +202,8 @@
                   <!-- /.col -->
                   <div class="col-sm-4 col-4">
                     <div class="description-block">
-                      <span class="description-percentage text-danger"><i class="fas fa-caret-down"></i> 18%</span>
-                      <h5 class="description-header" id="eth-price" style="font-size: 26px;">--------</h5>
+                      
+                      <h5 class="description-header" id="eth-price" style="font-size: 20px;">--------</h5>
                       <span class="description-text">ETH/BUSD</span>
                     </div>
                     <!-- /.description-block -->

@@ -9,6 +9,14 @@
 
   <!-- Main Sidebar Container -->
   {% include 'app_user/sidebar.html' %}
+
+  {% if messages %}
+    {% for message in messages %}
+        <div class="notification is-toast alert alert-{{message.tags}} text-center" role="alert" style="background-color: #1DB954; color: #fff; border-radius: 6px; font-weight: 600;">
+            {{ message }}
+        </div>
+    {% endfor %}
+  {% endif %}
 <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper" style="background-color: #28384c;">
     <!-- Content Header (Page header) -->
@@ -155,11 +163,6 @@
 
               </div>
 
-
-
-
-
-
               
             </div>
             <!-- /.card -->
@@ -179,11 +182,9 @@
 
     <!-- Main Footer -->
   <footer class="main-footer" style="background-color: #2d3653">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.1.0
-    </div>
+    <strong>Copyright &copy; 2021 <a href="https://Oppenhiem.io">Oppenhiem.io</a>.</strong>
+   
+   
   </footer>
 </div>
 <!-- ./wrapper -->

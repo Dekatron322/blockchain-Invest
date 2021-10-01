@@ -33,10 +33,21 @@ def IndexView(request):
 	bnb_balance = bnb_balance.json()
 	bep_balance = bep_balance.json()
 
+	investments = Investment.objects.filter(app_user__pk=app_user.id).order_by('-pub_date')
+
+	total_amount = 0
+	counts = 0
+	for item in investments:
+		counts += 1
+		total_amount += float(item.amount)
+
 	context = {
 		"app_user": app_user,
 		"bnb_balance": bnb_balance["balance"],
 		"bep_balance": bep_balance["balance"],
+		"investments": investments,
+		"counts": counts,
+		"total_amount": total_amount
 			
             }
 	
@@ -352,7 +363,7 @@ def MakeCommitView(request, package_type):
 
 
 		investment.save()
-
+		messages.warning(request, "Successfull!!!")
 		return HttpResponseRedirect(reverse("app_user:index"))
 
 
@@ -407,7 +418,7 @@ def MakeCommitCryptoView(request, package_type):
 
 
 			investment.save()
-
+			messages.warning(request, "Successfull!!!")
 			return HttpResponseRedirect(reverse("app_user:index"))
 
 

@@ -62,7 +62,7 @@ def InvestorDetailView(request, investor_id):
 
 		investor.save()
 
-
+		messages.warning(request, "Successfull !!!")
 		return HttpResponseRedirect(reverse("admin_app:investors"))
 
 
@@ -112,6 +112,7 @@ def InvestmentDetailView(request, investment_id):
 			pass
 
 		investment.save()
+		messages.warning(request, "Successfull !!!")
 		return HttpResponseRedirect(reverse("admin_app:investments"))
 
 
@@ -162,6 +163,7 @@ def WithdrawDetailView(request, withdraw_id):
 			pass
 
 		withdraw.save()
+		messages.warning(request, "Successfull !!!")
 		return HttpResponseRedirect(reverse("admin_app:withdraws"))
 
 

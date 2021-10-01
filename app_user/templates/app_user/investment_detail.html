@@ -30,23 +30,24 @@
 
     <!-- Main content -->
   <section class="content">
-    <div class="container-fluid">/
+    <div class="container-fluid">
 
       <div class="row">
         
         <div class="col-md-12">
           <!-- general form elements -->
-          <div class="card card-primary">
+          <div class="card card-warning">
             <div class="card-header">
-              <h3 class="card-title">Information about {{ investment }} Investment</h3>
+              <h3 class="card-title">Withdrawal request for {{ investment }}</h3>
             </div>
-            <br />
-            <div class="row container">
+            
+            <div class="card-body" style="background-color: #0e1326">
+              <div class="row container" style="background-color: #0e1326">
               <br /><br /><br />
               <form method="post">
                 {% csrf_token %}
 
-                <div class="row container">
+                
 
                   {% if button_status == 7 %}
                   <p class="container">Congratulations!, its been 7days since your investment. <br />
